@@ -37,3 +37,7 @@ output "private_data_subnet_az2_id" {
 output "internet_gateway" {
   value = aws_internet_gateway.internet_gateway
 }
+
+output "availability_zone_1" {
+  value = data.aws_availability_zones.available_zones.names[0]
+}
