@@ -13,3 +13,4 @@ resource "aws_s3_object" "upload_env_file" {
   key    = var.env_file_name
   source = "./${var.env_file_name}"
 }
+
