@@ -14,7 +14,7 @@ resource "aws_lb" "application_load_balancer" {
 
 # create target group
 resource "aws_lb_target_group" "alb_target_group" {
-  name        = "${var.project_name}-${var.environment}}-tg"
+  name        = "${var.project_name}-${var.environment}-tg"
   target_type = var.target_type
   port        = 80
   protocol    = "HTTP"
@@ -49,7 +49,7 @@ resource "aws_lb_listener" "alb_http_listener" {
   }
 }
 
-# create a listener on port 443 with forward action
+# create a listener on port 443 with forward-action
 resource "aws_lb_listener" "alb_https_listener" {
   load_balancer_arn = aws_lb.application_load_balancer.arn
   port              = 443
